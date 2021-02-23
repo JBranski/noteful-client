@@ -15,6 +15,7 @@ export default class AddNote extends Component {
   handleSubmit = e => {
     e.preventDefault()
     const newNote = {
+	  id: e.target['note-name'].value + "id",
       name: e.target['note-name'].value,
       content: e.target['note-content'].value,
       folderId: e.target['note-folder-id'].value,
