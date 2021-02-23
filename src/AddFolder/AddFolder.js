@@ -29,7 +29,7 @@ export default class AddFolder extends Component {
 			console.log(res);
           return res.json().then(e => Promise.reject(e))
 		}
-        return JSON.parse(res);
+        return res.json()
       })
       .then(folder => {
         this.context.addFolder(folder)
