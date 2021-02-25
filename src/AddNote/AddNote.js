@@ -29,8 +29,10 @@ export default class AddNote extends Component {
       body: JSON.stringify(newNote),
     })
       .then(res => {
-        if (!res.ok)
+        if (!res.ok){
+			console.log(res);
           return res.json().then(e => Promise.reject(e))
+		}
         return res.json()
       })
       .then(note => {
